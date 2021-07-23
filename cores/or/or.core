@@ -1,0 +1,33 @@
+CAPI=2:
+name: ethan:tests:or:1.0.0
+description: Or gate
+
+# Source Files https://fusesoc.readthedocs.io/en/stable/user/build_system/core_files.html#targets
+filesets:
+  rtl:
+    files:
+      - rtl/or.v
+    file_type: verilogSource
+  tb:
+    files:
+      - tb/or.tb.v
+    file_type: verilogSource
+
+# Targets https://fusesoc.readthedocs.io/en/stable/user/build_system/core_files.html#targets
+targets:
+  default: &default
+    filesets:
+      - rtl
+
+  # The "sim" target simulates the design
+  sim: # fusesoc run --target=sim ethan:tests:or:1.0.0
+    <<: *default
+    description: Simulate the design
+    default_tool: icarus
+    filesets_append:
+      - tb
+    toplevel: or_tb
+    tools:
+      icarus:
+        iverilog_options:
+          - -g2012 # Use SystemVerilog-2012

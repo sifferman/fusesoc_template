@@ -1,0 +1,33 @@
+CAPI=2:
+name: ethan:tests:and:1.0.0
+description: And gate
+
+# Source Files https://fusesoc.readthedocs.io/en/stable/user/build_system/core_files.html#targets
+filesets:
+  # default
+  rtl:
+    files:
+      - rtl/and.v: {file_type: verilogSource}
+  # simulation
+  tb:
+    files:
+      - tb/and.tb.v: {file_type: verilogSource}
+
+
+# Targets https://fusesoc.readthedocs.io/en/stable/user/build_system/core_files.html#targets
+targets:
+  default: &default
+    filesets:
+      - rtl
+
+  sim: # fusesoc run --target sim ethan:tests:and
+    <<: *default
+    description: Simulate the design
+    default_tool: icarus
+    filesets_append:
+      - tb
+    toplevel: and_tb
+    tools:
+      icarus:
+        iverilog_options:
+          - -g2012 # Use SystemVerilog-2012
