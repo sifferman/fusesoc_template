@@ -23,6 +23,9 @@ filesets:
   tinyfpga_bx:
     files:
       - boards/tinyfpga_bx/pinout.pcf: {file_type: PCF}
+  nexys_a7:
+    files:
+      - boards/nexys_a7/pinout.xdc: {file_type: xdc}
 
 
 # Targets https://fusesoc.readthedocs.io/en/stable/user/build_system/core_files.html#targets
@@ -50,11 +53,10 @@ targets:
 
   tinyfpga_bx:
     <<: *synth
-    description: Synthesize on Tiny FPGA Bx
+    description: Synthesize on TinyFPGA BX
     filesets_append:
       - proginfo
       - tinyfpga_bx
-    toplevel: top_m
     default_tool: icestorm
     hooks:
       post_run: [tinyprog]
@@ -62,6 +64,17 @@ targets:
       icestorm:
         nextpnr_options : [--lp8k, --package, cm81]
         pnr: next
+
+  nexys_a7:
+    <<: *synth
+    description: Synthesize on Nexys A7
+    filesets_append:
+      - nexys_a7
+    default_tool: vivado
+    tools:
+      vivado:
+        part : xc7a100tcsg324-1
+
 
 scripts:
   tinyprog:

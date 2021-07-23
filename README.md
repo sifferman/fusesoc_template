@@ -17,13 +17,16 @@ This repository has three different cores:
 * `ethan:tests:or`
 * `ethan:tests:and_or`
 
-## Supported Tools
+## Supported Software
 
 * [Icarus Verilog](https://www.howtoinstall.me/ubuntu/18-04/iverilog/)
+* [IceStorm, nextpnr, Yosys](http://bygone.clairexen.net/icestorm/#install)
+* [Vivado](https://www.xilinx.com/support/download.html)
 
 ## Supported Hardware
 
 * [TinyFPGA BX](https://tinyfpga.com/)
+* [Nexys A7](https://store.digilentinc.com/nexys-a7-fpga-trainer-board-recommended-for-ece-curriculum/)
 
 ## Usage
 
@@ -42,6 +45,8 @@ fusesoc library add and_or https://github.com/E4tHam/fusesoc_template --sync-typ
 fusesoc run --target=sim ethan:tests:and:1.0.0
 # Synthesize for TinyFPGA BX
 fusesoc run --target=tinyfpga_bx ethan:tests:and:1.0.0
+# Synthesize for Nexys A7
+fusesoc run --target=nexys_a7 ethan:tests:and:1.0.0
 ```
 
 ### `ethan:tests:or`
@@ -51,6 +56,8 @@ fusesoc run --target=tinyfpga_bx ethan:tests:and:1.0.0
 fusesoc run --target=sim ethan:tests:or:1.0.0
 # Synthesize for TinyFPGA BX
 fusesoc run --target=tinyfpga_bx ethan:tests:or:1.0.0
+# Synthesize for Nexys A7
+fusesoc run --target=nexys_a7 ethan:tests:or:1.0.0
 ```
 
 ### `ethan:tests:and_or`
@@ -60,4 +67,6 @@ fusesoc run --target=tinyfpga_bx ethan:tests:or:1.0.0
 fusesoc run --target=sim ethan:tests:and_or:1.0.0
 # Synthesize for TinyFPGA BX
 fusesoc run --target=tinyfpga_bx ethan:tests:and_or:1.0.0
+# Synthesize for Nexys A7
+fusesoc run --target=nexys_a7 ethan:tests:and_or:1.0.0
 ```
