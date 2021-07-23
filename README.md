@@ -33,7 +33,7 @@ This repository has three different cores:
 ### To add this library via Git
 
 ```bash
-fusesoc library e4tham_templates and https://github.com/E4tHam/fusesoc_template --sync-type=git
+fusesoc library add e4tham_templates https://github.com/E4tHam/fusesoc_template --sync-type=git
 ```
 
 ### To add this library from local clone
@@ -41,7 +41,6 @@ fusesoc library e4tham_templates and https://github.com/E4tHam/fusesoc_template 
 ```bash
 fusesoc library add e4tham_templates ${fusesoc_template_location}/cores
 cores --sync-type=local
-
 ```
 
 ## Usage
