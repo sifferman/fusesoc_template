@@ -1,0 +1,5 @@
+
+set_io a A1
+set_io b A2
+set_io and_o B1
+set_io or_o C2

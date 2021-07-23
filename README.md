@@ -21,6 +21,10 @@ This repository has three different cores:
 
 * [Icarus Verilog](https://www.howtoinstall.me/ubuntu/18-04/iverilog/)
 
+## Supported Hardware
+
+* [TinyFPGA BX](https://tinyfpga.com/)
+
 ## Usage
 
 To add this library from GitHub:
@@ -36,6 +40,8 @@ fusesoc library add and_or https://github.com/E4tHam/fusesoc_template --sync-typ
 ```bash
 # Simulate in Icarus Verilog
 fusesoc run --target=sim ethan:tests:and:1.0.0
+# Synthesize for TinyFPGA BX
+fusesoc run --target=tinyfpga_bx ethan:tests:and:1.0.0
 ```
 
 ### `ethan:tests:or`
@@ -43,6 +49,8 @@ fusesoc run --target=sim ethan:tests:and:1.0.0
 ```bash
 # Simulate in Icarus Verilog
 fusesoc run --target=sim ethan:tests:or:1.0.0
+# Synthesize for TinyFPGA BX
+fusesoc run --target=tinyfpga_bx ethan:tests:or:1.0.0
 ```
 
 ### `ethan:tests:and_or`
@@ -50,4 +58,6 @@ fusesoc run --target=sim ethan:tests:or:1.0.0
 ```bash
 # Simulate in Icarus Verilog
 fusesoc run --target=sim ethan:tests:and_or:1.0.0
+# Synthesize for TinyFPGA BX
+fusesoc run --target=tinyfpga_bx ethan:tests:and_or:1.0.0
 ```

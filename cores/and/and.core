@@ -12,6 +12,17 @@ filesets:
   tb:
     files:
       - tb/and.tb.v: {file_type: verilogSource}
+  # synthesis
+  synth:
+    files:
+      - synth/top.v: {file_type: verilogSource}
+  proginfo:
+    files:
+      - scripts/proginfo.py: {file_type : user, copyto : proginfo.py}
+  # boards
+  tinyfpga_bx:
+    files:
+      - boards/tinyfpga_bx/pinout.pcf: {file_type: PCF}
 
 
 # Targets https://fusesoc.readthedocs.io/en/stable/user/build_system/core_files.html#targets
@@ -19,6 +30,11 @@ targets:
   default: &default
     filesets:
       - rtl
+  synth: &synth
+    filesets:
+      - rtl
+      - synth
+    toplevel: top_m
 
   sim: # fusesoc run --target sim ethan:tests:and
     <<: *default
@@ -31,3 +47,22 @@ targets:
       icarus:
         iverilog_options:
           - -g2012 # Use SystemVerilog-2012
+
+  tinyfpga_bx:
+    <<: *synth
+    description: Synthesize on Tiny FPGA Bx
+    filesets_append:
+      - proginfo
+      - tinyfpga_bx
+    toplevel: top_m
+    default_tool: icestorm
+    hooks:
+      post_run: [tinyprog]
+    tools:
+      icestorm:
+        nextpnr_options : [--lp8k, --package, cm81]
+        pnr: next
+
+scripts:
+  tinyprog:
+    cmd: [python3, proginfo.py, tinyprog]
