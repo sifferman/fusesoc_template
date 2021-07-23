@@ -1,5 +1,5 @@
 CAPI=2:
-name: ethan:tests:and:1.0.0
+name: e4tham:templates:and:1.0.0
 description: And gate
 
 # Source Files https://fusesoc.readthedocs.io/en/stable/user/build_system/core_files.html#targets
@@ -39,7 +39,7 @@ targets:
       - synth
     toplevel: top_m
 
-  sim: # fusesoc run --target sim ethan:tests:and
+  sim: # fusesoc run --target sim e4tham:templates:and
     <<: *default
     description: Simulate the design
     default_tool: icarus

@@ -1,3 +1,4 @@
 
-build
-fusesoc.conf
+# From FuseSoC Testing
+**/build
+**/fusesoc.conf

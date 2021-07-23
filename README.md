@@ -13,9 +13,9 @@ This repository gives an example of getting started with [FuseSoC](https://githu
 
 This repository has three different cores:
 
-* `ethan:tests:and`
-* `ethan:tests:or`
-* `ethan:tests:and_or`
+* `e4tham:templates:and`
+* `e4tham:templates:or`
+* `e4tham:templates:and_or`
 
 ## Supported Software
 
@@ -28,45 +28,53 @@ This repository has three different cores:
 * [TinyFPGA BX](https://tinyfpga.com/)
 * [Nexys A7](https://store.digilentinc.com/nexys-a7-fpga-trainer-board-recommended-for-ece-curriculum/)
 
+## Getting Started
+
+### To add this library via Git
+
+```bash
+fusesoc library e4tham_templates and https://github.com/E4tHam/fusesoc_template --sync-type=git
+```
+
+### To add this library from local clone
+
+```bash
+fusesoc library add e4tham_templates ${fusesoc_template_location}/cores
+cores --sync-type=local
+
+```
+
 ## Usage
 
-To add this library from GitHub:
-
-```bash
-fusesoc library add and https://github.com/E4tHam/fusesoc_template --sync-type=git
-fusesoc library add or https://github.com/E4tHam/fusesoc_template --sync-type=git
-fusesoc library add and_or https://github.com/E4tHam/fusesoc_template --sync-type=git
-```
-
-### `ethan:tests:and`
+### `e4tham:templates:and`
 
 ```bash
 # Simulate in Icarus Verilog
-fusesoc run --target=sim ethan:tests:and:1.0.0
+fusesoc run --target=sim e4tham:templates:and:1.0.0
 # Synthesize for TinyFPGA BX
-fusesoc run --target=tinyfpga_bx ethan:tests:and:1.0.0
+fusesoc run --target=tinyfpga_bx e4tham:templates:and:1.0.0
 # Synthesize for Nexys A7
-fusesoc run --target=nexys_a7 ethan:tests:and:1.0.0
+fusesoc run --target=nexys_a7 e4tham:templates:and:1.0.0
 ```
 
-### `ethan:tests:or`
+### `e4tham:templates:or`
 
 ```bash
 # Simulate in Icarus Verilog
-fusesoc run --target=sim ethan:tests:or:1.0.0
+fusesoc run --target=sim e4tham:templates:or:1.0.0
 # Synthesize for TinyFPGA BX
-fusesoc run --target=tinyfpga_bx ethan:tests:or:1.0.0
+fusesoc run --target=tinyfpga_bx e4tham:templates:or:1.0.0
 # Synthesize for Nexys A7
-fusesoc run --target=nexys_a7 ethan:tests:or:1.0.0
+fusesoc run --target=nexys_a7 e4tham:templates:or:1.0.0
 ```
 
-### `ethan:tests:and_or`
+### `e4tham:templates:and_or`
 
 ```bash
 # Simulate in Icarus Verilog
-fusesoc run --target=sim ethan:tests:and_or:1.0.0
+fusesoc run --target=sim e4tham:templates:and_or:1.0.0
 # Synthesize for TinyFPGA BX
-fusesoc run --target=tinyfpga_bx ethan:tests:and_or:1.0.0
+fusesoc run --target=tinyfpga_bx e4tham:templates:and_or:1.0.0
 # Synthesize for Nexys A7
-fusesoc run --target=nexys_a7 ethan:tests:and_or:1.0.0
+fusesoc run --target=nexys_a7 e4tham:templates:and_or:1.0.0
 ```

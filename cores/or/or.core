@@ -1,5 +1,5 @@
 CAPI=2:
-name: ethan:tests:or:1.0.0
+name: e4tham:templates:or:1.0.0
 description: Or gate
 
 # Source Files https://fusesoc.readthedocs.io/en/stable/user/build_system/core_files.html#targets
@@ -40,7 +40,7 @@ targets:
     toplevel: top_m
 
   # The "sim" target simulates the design
-  sim: # fusesoc run --target=sim ethan:tests:or:1.0.0
+  sim: # fusesoc run --target=sim e4tham:templates:or:1.0.0
     <<: *default
     description: Simulate the design
     default_tool: icarus

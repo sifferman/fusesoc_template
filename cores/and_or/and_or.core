@@ -1,5 +1,5 @@
 CAPI=2:
-name: ethan:tests:and_or:1.0.0
+name: e4tham:templates:and_or:1.0.0
 description: And & or gate
 
 # Source Files https://fusesoc.readthedocs.io/en/stable/user/build_system/core_files.html#targets
@@ -7,8 +7,8 @@ filesets:
   # default
   rtl:
     depend:
-      - ethan:tests:and
-      - ethan:tests:or
+      - e4tham:templates:and
+      - e4tham:templates:or
   # simulation
   tb:
     files:
@@ -41,7 +41,7 @@ targets:
     toplevel: top_m
 
   # The "sim" target simulates the design
-  sim: # fusesoc run --target=sim ethan:tests:and_or:1.0
+  sim: # fusesoc run --target=sim e4tham:templates:and_or:1.0
     <<: *default
     description: Simulate the design
     default_tool: icarus

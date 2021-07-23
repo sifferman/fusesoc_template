@@ -3,7 +3,7 @@
 import os
 import sys
 
-system_name = "ethan_tests_and_or_1.0.0"
+system_name = "e4tham_templates_and_or_1.0.0"
 print("")
 print("Build was completed")
 print("")
